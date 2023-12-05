@@ -1,0 +1,14 @@
+
+.elementor-element{
+    background-color: aqua;
+    
+    }
+    .e-con-inner{
+    
+        background-color: brown;
+    }
+    .e-con.e-flex>.e-con-inner {
+    background-color: black;
+    
+    
+    }
