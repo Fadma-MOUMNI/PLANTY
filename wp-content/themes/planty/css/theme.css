@@ -321,7 +321,6 @@ position: relative;
 /*  input message */
 form textarea {
     height: 237px !important;
-
     flex-shrink: 0;
     width: 383px !important;
     border-radius: 7px !important;
@@ -336,14 +335,12 @@ form textarea {
     padding: 0px;
     border-radius: 7px !important;
     background: #FFF;
-
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
 }
 
 /*  input Nom */
 form label .nom-contcat {
     margin-top: 9px;
-
     background-color: #FFF !important;
     width: 383px !important;
     height: 71px;
@@ -358,7 +355,6 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 form p .btn-envoyer {
@@ -382,8 +378,6 @@ form p .btn-envoyer:hover {
     background-color: #C02E44 !important;
 
 }
-
-
 
 
 form p {
