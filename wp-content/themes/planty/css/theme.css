@@ -11,7 +11,7 @@
 @font-face {
     font-family: 'Syne';
     src: url('/Users/fadmamoumni/Downloads/Syne/Syne-VariableFont_wght.ttf') format('truetype');
-  
+
     /* Poids de la police pris en charge */
 
 }
@@ -96,10 +96,10 @@
 
     display: flex;
     text-align: center;
-    justify-content: center;
+
     align-items: center;
     font-weight: 400;
-    width: 150px;
+    width: 112px;
 
 }
 
@@ -173,14 +173,14 @@
 
 /*  placer la fleur dans la section d'equipe */
 .deco-fleur-equipe::after {
-position: relative;
+    position: relative;
     content: '';
     background-image: url('Group 5.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 166px;
     left: 84.5%;
-  transform: translateY(-75%);
+    transform: translateY(-75%);
 
 }
 
@@ -197,7 +197,7 @@ position: relative;
     width: 43%;
     height: 178px;
     transform: translateY(333%);
- 
+
 }
 
 
@@ -316,7 +316,6 @@ position: relative;
 
 
 
-
 /****  contacte    ****/
 /*  input message */
 form textarea {
@@ -359,9 +358,9 @@ form {
 
 form p .btn-envoyer {
     text-transform: none;
-   /* font-family: 'syne' !important;*/
-   font-style: normal;
-   font-weight: 400 !important;
+    font-family: syne !important;
+    font-style: normal;
+    font-weight: 400 !important;
     font-size: 15px !important;
     border-radius: 5px !important;
     background: #E0B9B4 !important;
@@ -458,13 +457,14 @@ form p {
         width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
 
     /*  placer la fleur dans la section rencontrer*/
     .deco-fleur-rencontrer::before {
         transform: translatex(100%);
-      
+
 
     }
 
@@ -479,44 +479,55 @@ form p {
 
 
 
-    
-
-/*  placer la fleur dans la section Nous contacter*/
-.deco-fleur-contact::before {
-    position: absolute;
-    left:10%;
-    transform: translate(-50%);
-    bottom: 20px;
-}
 
 
+    /*  placer la fleur dans la section Nous contacter*/
+    .deco-fleur-contact::before {
+        position: absolute;
+        left: 10%;
+        transform: translate(-50%);
+        bottom: 20px;
+    }
 
-.deco-fleur-contact::before {
-width: 36%;
-    background-position: 60% 59%;
-    transform: translateY(232%);
-}
+
+
+    .deco-fleur-contact::before {
+        width: 36%;
+        background-position: 60% 59%;
+        transform: translateY(232%);
+    }
 }
 
 @media only screen and (max-width: 768px) {
 
 
 
-/*  placer la fleur dans la section d'equipe*/
-.deco-fleur-equipe::after {
-    transform: translateY(-65%);
-    left: 60.5%;
+    /*  placer la fleur dans la section d'equipe*/
+    .deco-fleur-equipe::after {
+        transform: translateY(-65%);
+        left: 77.5%;
+        z-index: -1;
 
-}
+    }
 
-.deco-fleur-contact::before {
-    width: 30%;
+    .deco-fleur-contact::before {
+        width: 30%;
         background-position: 60% 59%;
         transform: translateY(232%);
     }
 
+   
 
 
+
+}
+
+
+
+@media only screen and (max-width: 426px) {
+    form label .nom-contcat {
+        width: 325px !important;
+    }
 
 
 }
