@@ -1,14 +1,530 @@
+/*inclure la typographie "Inter" pour le formulaire de commande */
+@font-face {
+    font-family: 'Inter';
+    src: url('/Users/fadmamoumni/Downloads/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: 400;
+    /* Poids de la police pris en charge */
 
-.elementor-element{
-    background-color: aqua;
-    
+}
+
+
+@font-face {
+    font-family: 'Syne';
+    src: url('/Users/fadmamoumni/Downloads/Syne/Syne-VariableFont_wght.ttf') format('truetype');
+  
+    /* Poids de la police pris en charge */
+
+}
+
+
+
+
+
+
+
+
+
+/* bouton de commander header*/
+
+
+#menu-item-16 a {
+
+    color: #FFF;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #DC9F96 !important;
+    padding: 30px 61px 31px 61px;
+    width: 236px;
+    height: 80px;
+}
+
+.header-Commander {
+    order: 1;
+}
+
+.hfe-nav-menu {
+    display: flex;
+
+}
+
+
+
+
+
+
+
+#menu-item-16 a:hover {
+
+    background: #C02E44 !important;
+}
+
+/* Nous rencontrer */
+#menu-item-15 {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    width: 150px;
+
+}
+
+/* bordure de lien  */
+#menu-item-15 a {
+    outline: none;
+}
+
+#menu-item-15 :hover {
+    padding: 1px 0px 2px 8px;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+
+}
+
+/* Admin */
+#admin {
+
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    width: 150px;
+
+}
+
+#admin a {
+    width: 100px;
+
+}
+
+#admin :hover {
+    padding: 1px 0px 2px 8px;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+
+
+#menu-1-e57096d {
+
+
+    padding-top: 0;
+    margin-top: 0;
+    padding-right: 0;
+
+
+
+
+
+
+
+}
+
+#id-btn {
+
+    width: 198px;
+    height: 55px !important;
+    padding: 9px 57px 9px 56px;
+}
+
+/*deuxieme btn commander*/
+.elementor-button-text {
+
+    padding: 3px 20px 3px 20px !important;
+
+
+}
+
+.cnt-image {
+    width: 394px;
+    height: 263px;
+}
+
+/*  placer la fleur dans la section Nous rencontrer */
+.deco-fleur-rencontrer::before {
+    content: '';
+    background-image: url('Group 2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 191px;
+    height: 188px;
+    left: 10%;
+    transform: translate(5%, 50%);
+    flex-shrink: 0;
+    position: absolute;
+}
+
+
+
+/*  placer la fleur dans la section d'equipe */
+.deco-fleur-equipe::after {
+position: relative;
+    content: '';
+    background-image: url('Group 5.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 166px;
+    left: 84.5%;
+  transform: translateY(-75%);
+
+}
+
+
+
+/*  placer la fleur dans la section Nous contacter*/
+.deco-fleur-contact::before {
+    position: relative;
+    content: '';
+    background-image: url('Group 16.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 59%;
+    width: 43%;
+    height: 178px;
+    transform: translateY(333%);
+ 
+}
+
+
+/*  contact form 7 */
+/*  commande */
+.div-commande {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.les-inputs {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+
+
+}
+
+.ligne-horizontale {
+    border-top: solid 1px #fff;
+    height: 35px;
+
+
+}
+
+
+
+
+
+
+/*  input produit de commande  */
+.produits {
+    text-align: center;
+    color: #000;
+    width: 39px !important;
+    height: 56px;
+    font-family: 'Inter';
+    font-weight: 400;
+    text-align: center;
+    background-color: #FFF !important;
+    font-size: 16px !important;
+    border-radius: 0px !important;
+
+
+}
+
+
+
+.Formulaire h3 {
+    color: #FFF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.les-blocs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    margin-bottom: 10px;
+}
+
+#blocs p {
+    margin-top: 35px;
+
+
+}
+
+.ligne-verticale {
+
+    border-left: solid 1px white;
+
+
+}
+
+.premium-cf-submit {
+    width: auto !important;
+
+}
+
+.cnt-bouton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-commander {
+    background-color: #af1f0c !important;
+    padding: 10px 60px;
+    border-radius: 5px;
+    width: 200px;
+
+}
+
+
+
+/*  cibler la bel de formulaire de commande   */
+.formulaire-commande label {
+
+    color: #ffffff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 7px !important;
+
+}
+
+
+
+
+
+
+/****  contacte    ****/
+/*  input message */
+form textarea {
+    height: 237px !important;
+
+    flex-shrink: 0;
+    width: 383px !important;
+    border-radius: 7px !important;
+    background-color: #FFF !important;
+}
+
+/*  input email */
+.wpcf7-email {
+    background-color: #FFF !important;
+    width: 383px !important;
+    height: 71px;
+    padding: 0px;
+    border-radius: 7px !important;
+    background: #FFF;
+
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+}
+
+/*  input Nom */
+form label .nom-contcat {
+    margin-top: 9px;
+
+    background-color: #FFF !important;
+    width: 383px !important;
+    height: 71px;
+    padding: 0px;
+    border-radius: 7px !important;
+    background: #FFF;
+
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form p .btn-envoyer {
+    text-transform: none;
+   /* font-family: 'syne' !important;*/
+   font-style: normal;
+   font-weight: 400 !important;
+    font-size: 15px !important;
+    border-radius: 5px !important;
+    background: #E0B9B4 !important;
+    display: flex;
+    width: 198px;
+    height: 55px;
+    padding: 9px 57px 9px 56px !important;
+    justify-content: center;
+    align-items: center !important;
+    flex-shrink: 0;
+}
+
+form p .btn-envoyer:hover {
+    background-color: #C02E44 !important;
+
+}
+
+
+
+
+form p {
+
+    margin-bottom: 13px;
+}
+
+/* pour label de formulaire commander */
+.premium-cf7-container label {
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* pour le bouton commander */
+.premium-cf7-container input.wpcf7-submit {
+
+    font-family: 'syne';
+    font-size: 13px;
+    margin-top: 30px;
+    display: flex;
+    width: 198px;
+    height: 55px;
+    justify-content: center;
+
+
+}
+
+.premium-cf7-container input.wpcf7-submit {
+    background-color: #000;
+    border: 1px solid #e0b9b400;
+}
+
+
+
+
+
+
+
+
+
+.cnt-bouton {
+
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+/*  div parent de contact */
+.wpcf7 p .btn-envoyer {
+    text-align: center !important;
+}
+
+/*  désactiver un spinner dans le formulaire  */
+.wpcf7-spinner {
+    display: none;
+}
+
+
+
+
+
+
+
+/* Styles pour les écrans jusqu'à 926 pixels en largeur */
+
+@media only screen and (max-width: 926px) {
+
+
+
+    .les-blocs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
-    .e-con-inner{
-    
-        background-color: brown;
+
+
+    /*  placer la fleur dans la section rencontrer*/
+    .deco-fleur-rencontrer::before {
+        transform: translatex(100%);
+      
+
     }
-    .e-con.e-flex>.e-con-inner {
-    background-color: black;
-    
-    
+
+
+    /*  placer la fleur dans la section d'equipe*/
+    .deco-fleur-equipe::after {
+        transform: translateY(-88%);
+        left: 81.5%;
+
     }
+
+
+
+
+    
+
+/*  placer la fleur dans la section Nous contacter*/
+.deco-fleur-contact::before {
+    position: absolute;
+    left:10%;
+    transform: translate(-50%);
+    bottom: 20px;
+}
+
+
+
+.deco-fleur-contact::before {
+width: 36%;
+    background-position: 60% 59%;
+    transform: translateY(232%);
+}
+}
+
+@media only screen and (max-width: 768px) {
+
+
+
+/*  placer la fleur dans la section d'equipe*/
+.deco-fleur-equipe::after {
+    transform: translateY(-65%);
+    left: 60.5%;
+
+}
+
+.deco-fleur-contact::before {
+    width: 30%;
+        background-position: 60% 59%;
+        transform: translateY(232%);
+    }
+
+
+
+
+
+}
