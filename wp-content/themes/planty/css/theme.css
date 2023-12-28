@@ -76,7 +76,7 @@
 
 /* bordure de lien  */
 #menu-item-15 a {
-    outline: none;
+    outline: none !important;
 }
 
 #menu-item-15 :hover {
@@ -210,16 +210,54 @@
 }
 
 .les-inputs {
-    height: 100px;
+    height: 259px;
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
+
 
 
 }
 
+.bloc-image-input {
+    width: 200px;
+    gap: 15px;
+    height: 201px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.elementor-background-slideshow__slide__image {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.elementor-background-slideshow__slide__image h2 {
+
+    color: #FFF;
+
+    text-align: center;
+    font-family: Syne;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+
+
+
+
 .ligne-horizontale {
+
     border-top: solid 1px #fff;
     height: 35px;
 
@@ -318,7 +356,7 @@
 
 /****  contacte    ****/
 
-.titre-contact{
+.titre-contact {
     color: #000;
     font-size: 30px;
     margin-bottom: 30px;
@@ -511,11 +549,12 @@ form p {
 
 @media only screen and (max-width: 767px) {
 
-/*  placer la fleur dans la section rencontrer*/
-.deco-fleur-rencontrer::before {
-    transform: translatex(50%);  
+    /*  placer la fleur dans la section rencontrer*/
+    .deco-fleur-rencontrer::before {
+        transform: translatex(50%);
 
-}
+    }
+
     /*  placer la fleur dans la section d'equipe*/
     .deco-fleur-equipe::after {
         transform: translateY(-65%);
@@ -529,10 +568,10 @@ form p {
         background-position: 60% 59%;
         transform: translateY(232%);
 
-        
+
     }
 
-   
+
 
 
 
@@ -545,10 +584,10 @@ form p {
         width: 325px !important;
     }
 
-/*  input message */
-form textarea {
-    width: 325px !important;
-}
+    /*  input message */
+    form textarea {
+        width: 325px !important;
+    }
 
 
     /*  placer la fleur dans la section rencontrer*/
@@ -557,8 +596,9 @@ form textarea {
 
 
     }
-     /*  placer la fleur dans la section d'equipe*/
-     .deco-fleur-equipe::after {
+
+    /*  placer la fleur dans la section d'equipe*/
+    .deco-fleur-equipe::after {
         transform: translateY(-65%);
         left: 64.5%;
         z-index: -1;
