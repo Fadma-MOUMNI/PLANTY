@@ -317,6 +317,16 @@
 
 
 /****  contacte    ****/
+
+.titre-contact{
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+
+
 /*  input message */
 form textarea {
     height: 237px !important;
@@ -473,6 +483,7 @@ form p {
     .deco-fleur-equipe::after {
         transform: translateY(-88%);
         left: 81.5%;
+        z-index: -1;
 
     }
 
@@ -498,9 +509,13 @@ form p {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
 
+/*  placer la fleur dans la section rencontrer*/
+.deco-fleur-rencontrer::before {
+    transform: translatex(50%);  
 
+}
     /*  placer la fleur dans la section d'equipe*/
     .deco-fleur-equipe::after {
         transform: translateY(-65%);
@@ -528,6 +543,26 @@ form p {
 @media only screen and (max-width: 426px) {
     form label .nom-contcat {
         width: 325px !important;
+    }
+
+/*  input message */
+form textarea {
+    width: 325px !important;
+}
+
+
+    /*  placer la fleur dans la section rencontrer*/
+    .deco-fleur-rencontrer::before {
+        transform: translatex(50%);
+
+
+    }
+     /*  placer la fleur dans la section d'equipe*/
+     .deco-fleur-equipe::after {
+        transform: translateY(-65%);
+        left: 64.5%;
+        z-index: -1;
+
     }
 
 
