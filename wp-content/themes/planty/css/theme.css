@@ -1,3 +1,13 @@
+
+body {
+    
+    margin: 0 auto; /* Pour centrer le body sur la page */
+}
+
+
+
+
+
 /*inclure la typographie "Inter" pour le formulaire de commande */
 @font-face {
     font-family: 'Inter';
@@ -173,6 +183,7 @@
 
 /*  placer la fleur dans la section d'equipe */
 .deco-fleur-equipe::after {
+    width: 131px;
     position: relative;
     content: '';
     background-image: url('Group 5.png');
@@ -180,7 +191,7 @@
     background-size: contain;
     height: 166px;
     left: 84.5%;
-    transform: translateY(-75%);
+    transform: translateY(-17%);
 
 }
 
@@ -193,10 +204,10 @@
     background-image: url('Group 16.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 100% 59%;
+    background-position: 103% 59%;
     width: 43%;
     height: 178px;
-    transform: translateY(333%);
+    transform: translateY(302%);
 
 }
 
@@ -238,6 +249,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.elementor .elementor-background-slideshow__slide__image {
+    width: 95%;
+    height: 200px;
+}
+
 
 
 .elementor-background-slideshow__slide__image h2 {
@@ -299,7 +316,7 @@
 .les-blocs {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     column-gap: 60px;
     margin-bottom: 10px;
@@ -338,6 +355,9 @@
 }
 
 
+.Formulaire {
+    width: 100%;
+}
 
 /*  cibler la bel de formulaire de commande   */
 .formulaire-commande label {
@@ -357,6 +377,7 @@
 /****  contacte    ****/
 
 .titre-contact {
+    width:257px;
     color: #000;
     font-size: 30px;
     margin-bottom: 30px;
@@ -497,7 +518,7 @@ form p {
 
 /* Styles pour les écrans jusqu'à 926 pixels en largeur */
 
-@media only screen and (max-width: 926px) {
+@media only screen and (max-width: 1001px) {
 
 
 
@@ -542,12 +563,12 @@ form p {
 
     .deco-fleur-contact::before {
         width: 36%;
-        background-position: 60% 59%;
-        transform: translateY(232%);
+        background-position: 70%;
+        transform: translateY(259%);
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:769px) {
 
     /*  placer la fleur dans la section rencontrer*/
     .deco-fleur-rencontrer::before {
@@ -577,16 +598,25 @@ form p {
 
 }
 
+@media only screen and (max-width:1000px) {
+
+    .deco-fleur-contact::before,.deco-fleur-equipe::after{
+        display: none;
+        
+    }
+}
 
 
-@media only screen and (max-width: 426px) {
+
+
+@media screen and (min-width: 306px) and (max-width: 768px) {
     form label .nom-contcat {
-        width: 325px !important;
+        width: 280px !important;
     }
 
     /*  input message */
     form textarea {
-        width: 325px !important;
+        width: 280px !important;
     }
 
 
@@ -606,4 +636,15 @@ form p {
     }
 
 
+    .les-inputs {
+        gap: 10px;
+        height: 929px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
 }
