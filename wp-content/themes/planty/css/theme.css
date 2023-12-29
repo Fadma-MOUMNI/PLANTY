@@ -516,9 +516,66 @@ form p {
 
 
 
-/* Styles pour les écrans jusqu'à 926 pixels en largeur */
 
-@media only screen and (max-width: 1001px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******MEDIA QUERY*******/
+
+
+
+/* Styles pour les écrans jusqu'à 1024 pixels en largeur */
+@media screen and (min-width:1001px) and (max-width: 1024px) {
 
 
 
@@ -540,7 +597,7 @@ form p {
 
     /*  placer la fleur dans la section d'equipe*/
     .deco-fleur-equipe::after {
-        transform: translateY(-88%);
+        transform: translateY(11%);
         left: 81.5%;
         z-index: -1;
 
@@ -567,6 +624,39 @@ form p {
         transform: translateY(259%);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1000px) {
+
+    .deco-fleur-contact::before,.deco-fleur-equipe::after{
+        display: none;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width:769px) {
 
@@ -598,16 +688,10 @@ form p {
 
 }
 
-@media only screen and (max-width:1000px) {
-
-    .deco-fleur-contact::before,.deco-fleur-equipe::after{
-        display: none;
-        
-    }
-}
 
 
 
+/*******Smartphone*******/
 
 @media screen and (min-width: 306px) and (max-width: 768px) {
     form label .nom-contcat {
