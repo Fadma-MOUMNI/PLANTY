@@ -1,6 +1,7 @@
 
 body {
     
+    
     margin: 0 auto; /* Pour centrer le body sur la page */
 }
 
@@ -215,7 +216,7 @@ body {
 /*  contact form 7 */
 /*  commande */
 .div-commande {
-    width: 100%;
+    /*width: 100%;*/
     display: flex;
     flex-direction: column;
 }
@@ -314,11 +315,13 @@ body {
 }
 
 .les-blocs {
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    column-gap: 60px;
+  gap: 60px;
+   
     margin-bottom: 10px;
 }
 
@@ -573,19 +576,13 @@ form p {
 /*******MEDIA QUERY*******/
 
 
-
 /* Styles pour les écrans jusqu'à 1024 pixels en largeur */
-@media screen and (min-width:1001px) and (max-width: 1024px) {
+@media screen and (min-width:769px) and (max-width: 1024px) {
 
-
-
-    .les-blocs {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
+    
+    
+    
+   
 
     /*  placer la fleur dans la section rencontrer*/
     .deco-fleur-rencontrer::before {
@@ -630,11 +627,6 @@ form p {
 
 
 
-
-
-
-
-
 @media only screen and (max-width:1000px) {
 
     .deco-fleur-contact::before,.deco-fleur-equipe::after{
@@ -642,9 +634,6 @@ form p {
         
     }
 }
-
-
-
 
 
 
@@ -694,6 +683,20 @@ form p {
 /*******Smartphone*******/
 
 @media screen and (min-width: 306px) and (max-width: 768px) {
+    
+    
+    .les-blocs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    
+    
+    
+    
     form label .nom-contcat {
         width: 280px !important;
     }
@@ -707,6 +710,7 @@ form p {
     /*  placer la fleur dans la section rencontrer*/
     .deco-fleur-rencontrer::before {
         transform: translatex(50%);
+        width:40%;
 
 
     }
