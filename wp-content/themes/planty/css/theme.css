@@ -1,8 +1,8 @@
-
 body {
-    
-    
-    margin: 0 auto; /* Pour centrer le body sur la page */
+
+
+    margin: 0 auto;
+    /* Pour centrer le body sur la page */
 }
 
 
@@ -216,7 +216,7 @@ body {
 /*  contact form 7 */
 /*  commande */
 .div-commande {
-    
+
     display: flex;
     flex-direction: column;
 }
@@ -328,13 +328,13 @@ body {
 
 
 .les-blocs {
-    
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-  
-   gap:60px;
+
+    gap: 60px;
     margin-bottom: 10px;
 }
 
@@ -393,7 +393,7 @@ body {
 /****  contacte    ****/
 
 .titre-contact {
-    width:257px;
+    width: 257px;
     color: #000;
     font-size: 30px;
     margin-bottom: 30px;
@@ -587,39 +587,49 @@ form p {
 
 
 /*******MEDIA QUERY*******/
+
+/* header */
 @media screen and (min-width:306px) and (max-width: 1024px) {
 
-    ul.hfe-nav-menu, .hfe-nav-menu li, .hfe-nav-menu ul {
+    ul.hfe-nav-menu,
+    .hfe-nav-menu li,
+    .hfe-nav-menu ul {
         display: flex;
         list-style: none !important;
         margin: 0;
         padding: 0;
         flex-direction: column;
+    }
 }
-}
+
+
+
+
+
+
 /* Styles pour les écrans jusqu'à 1024 pixels en largeur */
 @media screen and (min-width:769px) and (max-width: 1024px) {
 
-    .les-blocs{
+    .les-blocs {
         flex-direction: column;
     }
 
-    .elementor .elementor-background-slideshow__slide__image{
+    .elementor .elementor-background-slideshow__slide__image {
 
         width: 93%;
     }
 
-  .les-inputs{
-    width: 99% ;
-  }
+    .les-inputs {
+        width: 99%;
+    }
 
 
     .div-commande {
         align-items: center;
         width: 95%;
     }
-    
-   
+
+
 
     /*  placer la fleur dans la section rencontrer*/
     .deco-fleur-rencontrer::before {
@@ -666,9 +676,10 @@ form p {
 
 @media only screen and (max-width:1000px) {
 
-    .deco-fleur-contact::before,.deco-fleur-equipe::after{
+    .deco-fleur-contact::before,
+    .deco-fleur-equipe::after {
         display: none;
-        
+
     }
 }
 
@@ -709,7 +720,7 @@ form p {
     }
 
     .les-blocs {
-    
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -725,20 +736,20 @@ form p {
 /*******Smartphone*******/
 
 @media screen and (min-width: 306px) and (max-width: 768px) {
-    
-    
+
+
     .les-blocs {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     form label .nom-contcat {
         width: 280px !important;
     }
@@ -752,7 +763,7 @@ form p {
     /*  placer la fleur dans la section rencontrer*/
     .deco-fleur-rencontrer::before {
         transform: translatex(50%);
-        width:40%;
+        width: 40%;
 
 
     }
