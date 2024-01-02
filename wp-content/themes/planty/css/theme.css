@@ -216,7 +216,7 @@ body {
 /*  contact form 7 */
 /*  commande */
 .div-commande {
-    /*width: 100%;*/
+    
     display: flex;
     flex-direction: column;
 }
@@ -314,14 +314,27 @@ body {
 
 }
 
+
+
+
+.premium-cf7-container .wpcf7-form {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+
 .les-blocs {
     
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-  gap: 60px;
-   
+  
+   gap:60px;
     margin-bottom: 10px;
 }
 
@@ -574,13 +587,37 @@ form p {
 
 
 /*******MEDIA QUERY*******/
+@media screen and (min-width:306px) and (max-width: 1024px) {
 
-
+    ul.hfe-nav-menu, .hfe-nav-menu li, .hfe-nav-menu ul {
+        display: flex;
+        list-style: none !important;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+}
+}
 /* Styles pour les écrans jusqu'à 1024 pixels en largeur */
 @media screen and (min-width:769px) and (max-width: 1024px) {
 
-    
-    
+    .les-blocs{
+        flex-direction: column;
+    }
+
+    .elementor .elementor-background-slideshow__slide__image{
+
+        width: 93%;
+    }
+
+  .les-inputs{
+    width: 99% ;
+  }
+
+
+    .div-commande {
+        align-items: center;
+        width: 95%;
+    }
     
    
 
@@ -671,7 +708,12 @@ form p {
 
     }
 
-
+    .les-blocs {
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 
 
