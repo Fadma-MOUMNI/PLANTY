@@ -1575,7 +1575,7 @@ class Premium_Carousel extends Widget_Base {
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'carousel' ) ); ?>>
 		<?php if ( 'dots' === $settings['premium_carousel_nav_options'] ) { ?>
 				<div class="premium-carousel-nav-dot">
-			<?php if ( 'yes' !== $settings['custom_pagination_icon'] ) { ?>
+			<?php if ( 'yes' !== $settings['mscroll'] && 'yes' !== $settings['custom_pagination_icon'] ) { ?>
 					<i class="<?php echo esc_attr( $custom_paging ); ?>" aria-hidden="true"></i>
 				<?php
 			} else {
@@ -1584,7 +1584,7 @@ class Premium_Carousel extends Widget_Base {
 			?>
 				</div>
 		<?php } ?>
-		<?php if ( 'yes' === $settings['premium_carousel_navigation_show'] ) { ?>
+		<?php if ( 'yes' !== $settings['mscroll'] && 'yes' === $settings['premium_carousel_navigation_show'] ) { ?>
 				<div class="premium-carousel-nav-arrow-prev">
 					<a type="button" data-role="none" class="<?php echo esc_attr( $vertical_alignment ); ?> carousel-prev" aria-label="Previous" role="button">
 			<?php if ( 'yes' !== $settings['custom_left_arrow'] ) { ?>

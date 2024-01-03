@@ -120,6 +120,12 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
                 }, a.data(), o.data());
 
             o.is("a") && e.preventDefault(), a.one("show.bs.modal", function (e) {
+
+                //Resize screen to refresh masonry layouts.
+                setTimeout(function () {
+                    window.dispatchEvent(new Event('resize'));
+                }, 500);
+
                 var iFrames = a.find(".soundcloud-iframe");
                 a.find(".soundcloud-iframe").remove();
                 a.find(".premium-modal-box-modal-body").append(iFrames);

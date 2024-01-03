@@ -15,7 +15,7 @@ jQuery(window).on("elementor/frontend/init", function () {
 
         if (mapSettings.loadScroll) {
 
-            var $closestSection = $scope.closest('.elementor-top-section');
+            var $closestSection = $scope.closest('.elementor-top-section, .e-con');
 
             elementorFrontend.waypoint($closestSection, function () {
                 premiumMap = newMap(mapElement, mapSettings, mapStyle);

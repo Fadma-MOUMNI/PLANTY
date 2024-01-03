@@ -2513,7 +2513,7 @@ class Premium_Grid extends Widget_Base {
 		}
 
 		$cat_filtered = str_replace( ', ', ',', $cat_filtered );
-		$cat_filtered = preg_replace( '/[\s_`\'‘&@!#%]/', '-', $cat_filtered );
+		$cat_filtered = preg_replace( '/[\s_`\'&@!#%]/', '-', $cat_filtered );
 		$cat_filtered = str_replace( ',', ' ', $cat_filtered );
 
 		return $cat_filtered;

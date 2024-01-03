@@ -396,6 +396,9 @@
                             var viewCartTxt = $this.siblings('.added_to_cart').text();
 
                             if ('' == viewCartTxt)
+                                viewCartTxt = $scope.data('woo-cart-text');
+
+                            if ('' == viewCartTxt)
                                 viewCartTxt = 'View Cart';
 
                             $this.removeClass('add_to_cart_button').attr('href', PremiumWooSettings.woo_cart_url).text(viewCartTxt);

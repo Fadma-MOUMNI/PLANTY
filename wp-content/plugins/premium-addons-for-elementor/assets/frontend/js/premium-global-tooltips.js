@@ -15,7 +15,7 @@
             }
 
             var elemType = $scope.data('element_type'),
-                id = $scope.data("id"),
+                id = $scope.data("tooltip-id"),
                 settings = {};
 
             generateSettings(elemType, id);
@@ -197,8 +197,8 @@
                             mouseleave: onViewPort ? false : settings.triggerHover
                         },
                         arrow: settings.arrow,
-                        minWidth: settings.minWidth,
-                        maxWidth: settings.maxWidth,
+                        minWidth: settings.minWidth[getCurrentDevice()],
+                        maxWidth: settings.maxWidth[getCurrentDevice()],
                         distance: settings.distance,
                         interactive: settings.interactive,
                         side: 'string' === typeof settings.side ? settings.side.split(',') : settings.side[0],
@@ -340,8 +340,8 @@
                     },
                     arrow: settings.arrow,
                     autoClose: false,
-                    minWidth: settings.minWidth,
-                    maxWidth: settings.maxWidth,
+                    minWidth: settings.minWidth[getCurrentDevice()],
+                    maxWidth: settings.maxWidth[getCurrentDevice()],
                     distance: settings.distance,
                     interactive: settings.interactive && !settings.follow_mouse,
                     minIntersection: 16,
@@ -416,6 +416,19 @@
                 $.each(instances, function (i, instance) {
                     instance.close();
                 });
+            }
+
+            function getCurrentDevice() {
+
+                var currentDevice = elementorFrontend.getCurrentDeviceMode();
+
+                if (['mobile', 'mobile_extra'].includes(currentDevice)) {
+                    return 'mobile';
+                } else if (['tablet', 'tablet_extra'].includes(currentDevice)) {
+
+                } else {
+                    return 'desktop';
+                }
             }
         };
 

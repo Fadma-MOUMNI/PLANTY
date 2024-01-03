@@ -1960,6 +1960,10 @@
     content: "\e95d";
 }
 
+.pa-dash-premium-textual-showcase:before {
+    content: "\e95e";
+}
+
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotateZ(-180deg) rotateY(180deg);

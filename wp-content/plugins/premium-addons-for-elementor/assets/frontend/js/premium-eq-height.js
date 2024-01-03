@@ -7,7 +7,11 @@
             if (!$scope.hasClass("premium-equal-height-yes"))
                 return;
 
-            premiumEqHeightHandler($scope);
+            var timeToWait = $scope.find('.premium-carousel-inner, ul.products, .swiper-container').length ? 1500 : 10;
+
+            setTimeout(function () {
+                premiumEqHeightHandler($scope);
+            }, timeToWait);
         }
 
         function premiumEqHeightHandler($scope) {

@@ -485,7 +485,7 @@ class Addons_Integration {
 			'all'
 		);
 
-		wp_register_style(
+        wp_register_style(
 			'tooltipster',
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/tooltipster.min.css',
 			array(),

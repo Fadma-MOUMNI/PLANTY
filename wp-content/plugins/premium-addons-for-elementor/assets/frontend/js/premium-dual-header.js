@@ -1,18 +1,24 @@
 (function ($) {
 
     var PremiumMaskHandler = function ($scope, $) {
-        var mask = $scope.hasClass('premium-mask-yes');
+
+        var txtShowcaseElem = $scope.find('.pa-txt-sc__effect-min-mask .pa-txt-sc__main-item.pa-txt-sc__item-text'),
+            mask = $scope.hasClass('premium-mask-yes') || txtShowcaseElem.length;
 
         if (!mask) return;
 
         if ('premium-addon-title.default' === $scope.data('widget_type')) {
             var target = '.premium-title-header';
             $scope.find(target).find('.premium-title-icon, .premium-title-img').addClass('premium-mask-span');
+
+        } else if ('premium-textual-showcase.default' === $scope.data('widget_type') ) {
+            var target = '.pa-txt-sc__effect-min-mask';
+
         } else {
             var target = '.premium-dual-header-first-header';
         }
 
-        $scope.find(target).find('span:not(.premium-title-style7-stripe-wrap):not(.premium-title-img)').each(function (index, span) {
+        $scope.find(target).find('span:not(.premium-title-style7-stripe-wrap):not(.premium-title-img):not(.pa-txt-sc__hov-item)').each(function (index, span) {
             var html = '';
 
             $(this).text().split(' ').forEach(function (item) {
@@ -25,9 +31,16 @@
         });
 
         elementorFrontend.waypoint($scope, function () {
-            $($scope).addClass('premium-mask-active');
+            if ( txtShowcaseElem.length ) {
+
+                $(txtShowcaseElem).addClass('premium-mask-active');
+
+            } else {
+                $($scope).addClass('premium-mask-active');
+            }
         });
     };
+
 
     $(window).on('elementor/frontend/init', function () {
         elementorFrontend.hooks.addAction('frontend/element_ready/premium-addon-dual-header.default', PremiumMaskHandler);

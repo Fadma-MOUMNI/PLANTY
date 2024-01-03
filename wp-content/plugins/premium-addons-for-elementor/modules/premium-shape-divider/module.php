@@ -73,7 +73,7 @@ class Module {
 		add_action( 'elementor/preview/enqueue_styles', array( $this, 'enqueue_styles' ) );
 
 		// Creates Premium Global Divider tab at the end of layout/content tab.
-		add_action( 'elementor/element/section/section_layout/after_section_end', array( $this, 'register_controls' ), 10 );
+		add_action( 'elementor/element/section/section_advanced/after_section_end', array( $this, 'register_controls' ), 10 );
 		add_action( 'elementor/element/column/section_advanced/after_section_end', array( $this, 'register_controls' ), 10 );
 
 		// Editor Hooks.

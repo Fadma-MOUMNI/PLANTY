@@ -1,11 +1,11 @@
 @font-face {
     font-family: "pa-elements";
-    src: url("../fonts/pa-elements.eot?bodeei");
+    src: url("../fonts/pa-elements.eot?bvkp9k");
     src:
-        url("../fonts/pa-elements.eot?bodeei#iefix") format("embedded-opentype"),
-        url("../fonts/pa-elements.ttf?bodeei") format("truetype"),
-        url("../fonts/pa-elements.woff?bodeei") format("woff"),
-        url("../fonts/pa-elements.svg?bodeei#pa-elements") format("svg");
+        url("../fonts/pa-elements.eot?bvkp9k#iefix") format("embedded-opentype"),
+        url("../fonts/pa-elements.ttf?bvkp9k") format("truetype"),
+        url("../fonts/pa-elements.woff?bvkp9k") format("woff"),
+        url("../fonts/pa-elements.svg?bvkp9k#pa-elements") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -205,6 +205,10 @@ html:not([dir="rtl"]) .pa-tiktok-feed:before {
 .pa-tiktok:before {
     content: "\e946";
 }
+
+.pa-showcase:before {
+    content: "\e94c";
+  }
 
 .editor-pa-doc {
     font-style: italic;

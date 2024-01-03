@@ -2496,18 +2496,24 @@
         };
 
         var PremiumMaskHandler = function ($scope, $) {
-            var mask = $scope.hasClass('premium-mask-yes');
+
+            var txtShowcaseElem = $scope.find('.pa-txt-sc__effect-min-mask .pa-txt-sc__main-item.pa-txt-sc__item-text'),
+                mask = $scope.hasClass('premium-mask-yes') || txtShowcaseElem.length;
 
             if (!mask) return;
 
             if ('premium-addon-title.default' === $scope.data('widget_type')) {
                 var target = '.premium-title-header';
                 $scope.find(target).find('.premium-title-icon, .premium-title-img').addClass('premium-mask-span');
+
+            } else if ('premium-textual-showcase.default' === $scope.data('widget_type') ) {
+                var target = '.pa-txt-sc__effect-min-mask';
+
             } else {
                 var target = '.premium-dual-header-first-header';
             }
 
-            $scope.find(target).find('span:not(.premium-title-style7-stripe-wrap):not(.premium-title-img)').each(function (index, span) {
+            $scope.find(target).find('span:not(.premium-title-style7-stripe-wrap):not(.premium-title-img):not(.pa-txt-sc__hov-item)').each(function (index, span) {
                 var html = '';
 
                 $(this).text().split(' ').forEach(function (item) {
@@ -2520,7 +2526,13 @@
             });
 
             elementorFrontend.waypoint($scope, function () {
-                $($scope).addClass('premium-mask-active');
+                if ( txtShowcaseElem.length ) {
+
+                    $(txtShowcaseElem).addClass('premium-mask-active');
+
+                } else {
+                    $($scope).addClass('premium-mask-active');
+                }
             });
         };
 
@@ -3931,103 +3943,24 @@
             if ('infinite' === animationType) {
 
                 var $mediaItemsContainer = $outerContainer.find('.premium-adv-carousel__items'),
-                    direction = settings.dir,
-                    scrollDir = settings.reverse,
-                    duration = settings.speed * 1000 + 'ms',
-                    animeName = 'pa-scroll-' + $scope.data('id'),
-                    horAlignWidth = 10,
-                    verAlignWidth = 10,
                     light_box = settings.light_box,
                     lightbox_type = settings.lightbox_type;
 
-                elementorFrontend.waypoint($scope, function () {
+                if ("load" === settings.renderEvent) {
 
-                    var $mediaItem = $scope.find('.premium-adv-carousel__item'),
-                        transformOffset = 'horizontal' === direction ? $carouselContainer.innerWidth() : $carouselContainer.innerHeight(),
-                        start = 'transform: translateX(' + 0 + 'px)',
-                        end = 'transform: translateX(-50%)',
-                        containerHeight = $mediaItemsContainer.outerHeight();
+                    runInfiniteAnimation();
 
-                    if ('horizontal' === direction) {
+                } else {
 
-                        $mediaItem.each(function () {
-                            horAlignWidth += $(this).outerWidth(true);
-                        });
+                    elementorFrontend.waypoint($scope, function () {
 
-                        $mediaItemsContainer.css({
-                            'height': containerHeight,
-                            'position': 'relative'
-                        });
+                        runInfiniteAnimation();
 
-                        $mediaItemsContainer.css({ 'width': horAlignWidth });
-                        $mediaItemsContainer.find('.premium-adv-carousel__item-outer-wrapper').css('position', 'absolute');
-
-                        if ('normal' === scrollDir) {
-                            $mediaItemsContainer.find('.premium-adv-carousel__item-outer-wrapper').css('right', 0);
-                        } else {
-                            $mediaItemsContainer.css('left', '-' + horAlignWidth / $mediaItem.length + 'px');
-                        }
-
-                        var slidesSpacing = getComputedStyle($scope[0]).getPropertyValue('--pa-wheel-spacing') || 0,
-                            factor = 'normal' === scrollDir ? -1 : 1;
-
-                        gsap.set($scope.find('.premium-adv-carousel__item-outer-wrapper'), {
-                            x: function (i) { return i * factor * (horAlignWidth / $mediaItem.length + parseFloat(slidesSpacing)) }
-                        });
-
-                        var fullWidth = (horAlignWidth + ($mediaItem.length * parseFloat(slidesSpacing)));
-
-                        var animation = gsap.to($scope.find('.premium-adv-carousel__item-outer-wrapper'), {
-                            duration: 30,
-                            ease: "none",
-                            x: ('normal' === scrollDir ? '-=' : '+=') + fullWidth,
-                            modifiers: {
-                                x: gsap.utils.unitize(function (x) {
-
-                                    var remainder = parseFloat(x) % fullWidth,
-                                        clampedValue = Math.max(remainder, -fullWidth);
-
-                                    return 'normal' === scrollDir ? clampedValue : remainder
-
-                                })
-                            },
-                            repeat: -1
-                        });
-
-                        //Pause on hover
-                        if (settings.pauseOnHover) {
-                            $scope.hover(function () {
-                                animation.pause();
-                            }, function () {
-                                animation.play();
-                            })
-                        }
-
-
-                    } else {
-
-                        start = 'transform: translateY(' + transformOffset + 'px)';
-                        end = 'transform: translateY(-101%)';
-
-                        $mediaItem.each(function () {
-                            verAlignWidth += $(this).outerHeight(true);
-                        });
-
-                        $mediaItemsContainer.css({ 'height': verAlignWidth });
-
-                        var keyFrames = document.createElement("style");
-
-                        keyFrames.innerHTML = '@keyframes ' + animeName + ' { 0%{ ' + start + '} 100% {' + end + '} }';
-
-                        document.head.appendChild(keyFrames);
-
-                        $mediaItemsContainer.css('animation', animeName + ' ' + duration + ' linear 0s infinite ' + scrollDir + ' none');
-
-                    }
-                }, {
-                    offset: "100%",
-                    triggerOnce: true
-                });
+                    }, {
+                        offset: "100%",
+                        triggerOnce: true
+                    });
+                }
 
                 $carouselContainer.css('visibility', 'inherit');
 
@@ -4170,6 +4103,108 @@
 
                 $scope.find(".premium-adv-carousel__video-icon, .premium-adv-carousel__vid-overlay").css("visibility", "visible");
                 $scope.find(".premium-adv-carousel__media-wrap").css("background", "unset");
+            }
+
+            function runInfiniteAnimation() {
+
+                var $mediaItem = $scope.find('.premium-adv-carousel__item'),
+                    direction = settings.dir,
+                    transformOffset = 'horizontal' === direction ? $carouselContainer.innerWidth() : $carouselContainer.innerHeight(),
+                    start = 'transform: translateX(' + 0 + 'px)',
+                    end = 'transform: translateX(-50%)',
+                    scrollDir = settings.reverse,
+                    horAlignWidth = 10,
+                    verAlignWidth = 10,
+                    duration = settings.speed * 1000 + 'ms',
+                    animeName = 'pa-scroll-' + $scope.data('id'),
+                    containerHeight = $mediaItemsContainer.outerHeight();
+
+                if ('horizontal' === direction) {
+
+                    $mediaItem.each(function () {
+                        horAlignWidth += $(this).outerWidth(true);
+                    });
+
+                    $mediaItemsContainer.css({
+                        'height': containerHeight,
+                        'position': 'relative'
+                    });
+
+                    $mediaItemsContainer.css({ 'width': horAlignWidth });
+                    $mediaItemsContainer.find('.premium-adv-carousel__item-outer-wrapper').css('position', 'absolute');
+
+                    if ('normal' === scrollDir) {
+                        $mediaItemsContainer.find('.premium-adv-carousel__item-outer-wrapper').css('right', 0);
+                    } else {
+                        $mediaItemsContainer.css('left', '-' + horAlignWidth / $mediaItem.length + 'px');
+                    }
+
+                    var slidesSpacing = getComputedStyle($scope[0]).getPropertyValue('--pa-wheel-spacing') || 0,
+                        factor = 'normal' === scrollDir ? -1 : 1,
+                        accumlativeWidth = 0;
+
+
+                    gsap.set($scope.find('.premium-adv-carousel__item-outer-wrapper'), {
+                        x: function (i) {
+
+                            transformVal = accumlativeWidth;
+
+                            accumlativeWidth = accumlativeWidth + $mediaItem.eq(i).outerWidth(true) + parseFloat(slidesSpacing);
+
+                            return (transformVal) * factor
+                        }
+                    });
+
+                    var fullWidth = (horAlignWidth + (($mediaItem.length - 2) * parseFloat(slidesSpacing)));
+
+                    var animation = gsap.to($scope.find('.premium-adv-carousel__item-outer-wrapper'), {
+                        duration: settings.speed,
+                        ease: "none",
+                        x: ('normal' === scrollDir ? '-=' : '+=') + fullWidth,
+                        modifiers: {
+                            x: gsap.utils.unitize(function (x) {
+
+                                var remainder = parseFloat(x) % fullWidth,
+                                    clampedValue = Math.max(remainder, -fullWidth);
+
+                                return 'normal' === scrollDir ? clampedValue : remainder
+
+                            })
+                        },
+                        repeat: -1
+                    });
+
+                    //Pause on hover
+                    if (settings.pauseOnHover) {
+                        $scope.hover(function () {
+                            animation.pause();
+                        }, function () {
+                            animation.play();
+                        })
+                    }
+
+
+                } else {
+
+                    start = 'transform: translateY(' + transformOffset + 'px)';
+                    end = 'transform: translateY(-101%)';
+
+                    $mediaItem.each(function () {
+                        verAlignWidth += $(this).outerHeight(true);
+                    });
+
+                    $mediaItemsContainer.css({ 'height': verAlignWidth });
+
+                    var keyFrames = document.createElement("style");
+
+                    keyFrames.innerHTML = '@keyframes ' + animeName + ' { 0%{ ' + start + '} 100% {' + end + '} }';
+
+                    document.head.appendChild(keyFrames);
+
+                    $mediaItemsContainer.css('animation', animeName + ' ' + duration + ' linear 0s infinite ' + scrollDir + ' none');
+
+                }
+
             }
 
             function getPrettyPhotoSettings() {
@@ -4363,6 +4398,54 @@
 
         });
 
+        var PremiumTextualShowcaseHandler = function ($scope, $) {
+
+            var trigger = $scope.find('.pa-txt-sc__outer-container').hasClass('pa-trigger-on-viewport') ? 'viewport' : 'hover',
+                hasGrowEffect = $scope.find('.pa-txt-sc__effect-grow').length;
+
+            if ( hasGrowEffect ) { // grow always triggered on viewport.
+                elementorFrontend.waypoint($scope, function () {
+                    $scope.find('.pa-txt-sc__effect-grow').css('clip-path', 'inset(0 0 0 0)');
+                }, {
+                    offset: '100%',
+                });
+            }
+
+            $scope.off('.PaTextualHandler');
+
+            if ( 'viewport' === trigger ) {
+
+                elementorFrontend.waypoint($scope, function () {
+                    triggerItemsEffects();
+                }, {
+                    offset: '100%',
+                });
+
+            } else {
+
+                $scope.on( "mouseenter.PaTextualHandler mouseleave.PaTextualHandler", function(){
+                    triggerItemsEffects();
+                });
+            }
+
+            function triggerItemsEffects() {
+                $scope.find('.pa-txt-sc__item-container:not(.pa-txt-sc__effect-none)').each(function() {
+
+                    var effectName = this.className.match(/pa-txt-sc__effect-\S+/)[0].replace('pa-txt-sc__effect-','');
+
+                    if ( 'grow' === effectName) {
+                        return true;
+                    }
+
+                    if ( ['outline', 'curly', 'circle', 'x', 'h-underline','underline-zigzag', 'double-underline', 'diagonal', 'strikethrough'].includes(effectName) ) {
+                        $(this).find('svg').toggleClass('outline');
+                    } else {
+                        $(this).toggleClass(effectName);
+                    }
+                });
+            }
+        };
+
         var functionalHandlers = {
             'premium-addon-dual-header.default': PremiumMaskHandler,
             'premium-addon-video-box.default': PremiumVideoBoxWidgetHandler,
@@ -4382,6 +4465,7 @@
             'premium-pinterest-feed.default': PremiumPinterestHandler,
             'premium-tiktok-feed.default': PremiumTiktokHandler,
             'premium-media-wheel.default': PremiumAdvCarouselHandler,
+            'premium-textual-showcase.default': [PremiumTextualShowcaseHandler,PremiumMaskHandler]
         };
 
         var classHandlers = {

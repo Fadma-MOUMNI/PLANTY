@@ -1280,11 +1280,11 @@ class Admin_Helper {
 	public static function get_used_widgets() {
 
 		$used_widgets    = array();
-		$tracker_allowed = 'yes' === get_option( 'elementor_allow_tracking' ) ? true : false;
+		// $tracker_allowed = 'yes' === get_option( 'elementor_allow_tracking' ) ? true : false;
 
-		if ( ! $tracker_allowed ) {
-			return false;
-		}
+		// if ( ! $tracker_allowed ) {
+		// 	return false;
+		// }
 
 		if ( class_exists( 'Elementor\Modules\Usage\Module' ) ) {
 

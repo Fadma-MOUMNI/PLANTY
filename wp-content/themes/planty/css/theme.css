@@ -22,7 +22,7 @@ body {
 @font-face {
     font-family: 'Syne';
     src: url('/Users/fadmamoumni/Downloads/Syne/Syne-VariableFont_wght.ttf') format('truetype');
-
+    font-weight: 400;
     /* Poids de la police pris en charge */
 
 }
@@ -528,8 +528,11 @@ form p {
 
 
 
+/* le lien de footer   */
+.elementor-204 .elementor-element.elementor-element-b814319 .elementor-heading-title a{
 
-
+    outline: none !important;
+}
 
 
 

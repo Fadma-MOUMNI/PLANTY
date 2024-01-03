@@ -1014,7 +1014,7 @@ class Helper_Functions {
 	 * @param string $search search query.
 	 * @param array  $conditions control conditions
 	 */
-	public static function get_draw_svg_notice( $elem, $search, $conditions, $index = 0 ) {
+	public static function get_draw_svg_notice( $elem, $search, $conditions, $index = 0, $nested = 'condition' ) {
 
 		$url = add_query_arg(
 			array(
@@ -1023,17 +1023,19 @@ class Helper_Functions {
 			esc_url( admin_url( 'admin.php' ) )
 		);
 
-		$elem->add_control(
-			'draw_svg_notice_' . $index,
-			array(
-				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => __( 'You need first to enable SVG Draw option checkbox from ', 'premium-addons-for-elementor' ) . '<a href="' . esc_url( $url ) . '" target="_blank">' . __( 'here.', 'premium-addons-for-elementor' ) . '</a>',
-				'classes'         => 'editor-pa-control-notice',
-				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-				'condition'       => $conditions,
-			)
+		$control_attr = array(
+			'type'            => Controls_Manager::RAW_HTML,
+			'raw'             => __( 'You need first to enable SVG Draw option checkbox from ', 'premium-addons-for-elementor' ) . '<a href="' . esc_url( $url ) . '" target="_blank">' . __( 'here.', 'premium-addons-for-elementor' ) . '</a>',
+			'classes'         => 'editor-pa-control-notice',
+			'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 		);
 
+		$control_attr[ $nested ] = $conditions;
+		
+		$elem->add_control(
+			'draw_svg_notice_' . $index,
+			$control_attr
+		);
 	}
 
 	/**

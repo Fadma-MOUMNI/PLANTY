@@ -824,6 +824,7 @@ class Module {
 				'label'       => __( 'Min Width', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
 				'render_type' => 'template',
+                'devices'     => array( 'desktop', 'tablet', 'mobile' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 0,
@@ -1119,7 +1120,7 @@ class Module {
 
 		$element_type = $element->get_type();
 
-		$id = $element->get_id();
+		$id = rand(0,1000);
 
 		$settings = $element->get_settings_for_display();
 
@@ -1211,8 +1212,8 @@ class Module {
 			$tooltip_settings = array(
 				'type'         => $type,
 				'content'      => $content,
-				'min_width'    => $min_width,
-				'max_width'    => $max_width,
+				'minWidth'     => $min_width,
+				'maxWidth'     => $max_width,
 				'zindex'       => $settings['pa_tooltip_zindex'],
 				'target'       => $settings['pa_tooltip_target'],
 				'anime'        => $settings['premium_tooltip_anime'],
@@ -1234,6 +1235,8 @@ class Module {
 			}
 
 			$element->add_render_attribute( '_wrapper', 'data-tooltip_settings', wp_json_encode( $tooltip_settings ) );
+
+			$element->add_render_attribute( '_wrapper', 'data-tooltip-id', $id );
 
 			if ( 'widget' === $element_type && \Elementor\Plugin::instance()->editor->is_edit_mode() ) {
 				?>

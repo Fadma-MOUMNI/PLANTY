@@ -44,6 +44,10 @@
   display: block;
 }
 
+.premium-blog-thumbnail-overlay {
+  opacity: 0;
+}
+
 .premium-blog-zoomout-effect img,
 .premium-blog-scale-effect img {
   -webkit-transform: scale(1.2);
@@ -203,7 +207,6 @@
   height: 100%;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  opacity: 0;
 }
 
 .premium-blog-post-container.premium-blog-skin-classic .premium-blog-thumbnail-overlay a, .premium-blog-post-container.premium-blog-skin-side .premium-blog-thumbnail-overlay a, .premium-blog-post-container.premium-blog-skin-banner .premium-blog-thumbnail-overlay a {

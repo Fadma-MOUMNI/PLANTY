@@ -1682,7 +1682,7 @@ class Premium_Blog extends Widget_Base {
 				'label'     => __( 'Overlay Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .premium-blog-framed-effect, {{WRAPPER}} .premium-blog-bordered-effect,{{WRAPPER}} .premium-blog-squares-effect:before,{{WRAPPER}} .premium-blog-squares-effect:after,{{WRAPPER}} .premium-blog-squares-square-container:before,{{WRAPPER}} .premium-blog-squares-square-container:after, {{WRAPPER}} .premium-blog-thumbnail-overlay' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .premium-blog-framed-effect, {{WRAPPER}} .premium-blog-bordered-effect, {{WRAPPER}} .premium-blog-squares-effect:before, {{WRAPPER}} .premium-blog-squares-effect:after, {{WRAPPER}} .premium-blog-squares-square-container:before, {{WRAPPER}} .premium-blog-squares-square-container:after, {{WRAPPER}} .premium-blog-thumbnail-overlay' => 'background-color: {{VALUE}};',
 				),
 			)
 		);
