@@ -150,6 +150,7 @@ body {
 .nav-menu   {
     display: flex;
     justify-content: end;
+    flex-wrap: nowrap;
     
 }
 
@@ -601,38 +602,18 @@ form p {
 
 /* header */
 /*les ecrans moins de 442 px*/
-@media screen and (min-width: 442px) {
+@media screen and (min-width: 452px) {
 
-
- 
-
-    #menu-item-16 a {
-        width: auto !important;
-        height: auto;
-        color: #FFF;
-        text-align: center;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        background-color: #DC9F96 !important;
-    }
-
-        .hfe-nav-menu__breakpoint-tablet .hfe-nav-menu__layout-horizontal li,
-    .hfe-nav-menu__breakpoint-tablet .hfe-nav-menu{
-        width:auto !important;
-        margin-right:0px;
-    }
-        
-        
-
-
-    
 
 
 
 }
 
+@media screen and (min-width:320px) and (max-width: 1024px) {
+
+
+
+}
 
 @media screen and (min-width:320px) and (max-width: 1024px) {
     nav ul{
@@ -870,7 +851,7 @@ form p {
     }
 
 
-
+/*
     #menu-item-16 a {
         width: auto !important;
         height: auto;
@@ -886,7 +867,7 @@ form p {
         
 
 
-    }
+    }*/
 
 
 
