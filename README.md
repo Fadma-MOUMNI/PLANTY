@@ -21,8 +21,9 @@ Développer un site vitrine WordPress pour **Planty**, une marque de boissons é
 
 ## 📦 Ressources fournies
 
-- Maquette et prototype Figma
-- Cahier des charges techniques
+
+- Maquette et prototype Figma : [Voir sur Figma](https://www.figma.com/proto/YTWJgWJeHnd7vGwnRorLDA/Maquette-Planty-P6-Wordpress--Copy-?page-id=0%3A1&node-id=2-40&starting-point-node-id=2%3A40&t=EPCRpa7FWEuc203p-1)
+- Cahier des charges techniques : [Télécharger le PDF](DW+P6+Wordpress+-+Spécifications+fonctionnelles.pdf)
 
 ---
 
