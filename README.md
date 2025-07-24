@@ -1,4 +1,5 @@
-🌿 **Planty – Site vitrine WordPress personnalisé**
+🌿 **Planty – Site vitrine WordPress personnalisé**<img width="720" height="278" alt="Capture d’écran 2025-07-24 à 16 47 39" src="https://github.com/user-attachments/assets/c0b8a898-232b-4a4d-b1d7-d18819a89469" />
+
 
 Projet réalisé dans le cadre du parcours **Développeur WordPress** chez [OpenClassrooms](https://openclassrooms.com/).
 
