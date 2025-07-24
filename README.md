@@ -34,7 +34,6 @@ Développer un site vitrine WordPress pour **Planty**, une marque de boissons é
 - Thème utilisé : **Astra**
 - Constructeur de page : **Elementor**
 - Plugins :
-  - **Spectra** : blocs avancés pour Gutenberg
   - **Fluent Forms** : gestion des formulaires
   - **All-in-One WP Migration** : sauvegarde complète
   - **Extensions de sécurité & cache**
