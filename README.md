@@ -61,7 +61,7 @@ Développer un site vitrine WordPress pour **Planty**, une marque de boissons é
 
 ## 🔗 Lien vers le site
 
-*(Ajouter ici le lien de démo si disponible)*
+*(.........)*
 
 ---
 
